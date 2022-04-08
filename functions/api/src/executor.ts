@@ -20,8 +20,8 @@ export const handler = async (
 
   const messages = event.Records.map(async (record) => {
     const dt = new Date();
-    const schedule = JSON.parse(record.body);
-    schedule.lastRun = dt.toISOString();
+    const schedule = new Schedule(JSON.parse(record.body));
+    schedule.lastRun =  dt.toISOString();
     const scheduleHistory: ScheduleHistory = new ScheduleHistory({
       ...schedule,
       id: uuid4(),
