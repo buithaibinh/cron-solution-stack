@@ -1,0 +1,37 @@
+{
+  "name": "cdk",
+  "version": "0.1.0",
+  "bin": {
+    "cdk": "bin/cdk.js"
+  },
+  "scripts": {
+    "ts-node": "ts-node",
+    "tsc": "tsc",
+    "build": "tsc -b",
+    "watch": "tsc -w",
+    "clean": "tsc -b --clean && rm -rf cdk.out",
+    "cdk": "cdk",
+    "cdk-synth": "cdk synth",
+    "cdk-diff": "cdk diff || true",
+    "cdk-deploy": "cdk deploy",
+    "cdk-destroy": "cdk destroy",
+    "cdk-bootstrap": "cdk bootstrap",
+    "generate-config": "ts-node ./src/generateConfig.ts"
+  },
+  "devDependencies": {
+    "@aws-cdk/aws-apigateway": "^1.151.0",
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "aws-cdk": "2.18.0",
+    "aws-sdk": "^2.1107.0",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.18.0",
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.16"
+  }
+}
