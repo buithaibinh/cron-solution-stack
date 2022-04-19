@@ -7,7 +7,9 @@ import { Schedule } from '../models/schedule';
 export class DynamoDBStorageService implements StorageService {
   constructor(
     private readonly tableName: string,
-    private readonly docClient: DocumentClient = new aws.DynamoDB.DocumentClient()
+    private readonly docClient: DocumentClient = new aws.DynamoDB.DocumentClient({
+      convertEmptyValues: true,
+    })
   ) {}
 
   public async getSchedule(id: string): Promise<Schedule | null> {

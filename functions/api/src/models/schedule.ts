@@ -22,7 +22,7 @@ export class Schedule {
       startDate,
       endDate,
       tz,
-      utc: !!tz,
+      utc: tz? false: true,
     };
     try {
       const interval = parser.parseExpression(expression, opts);
